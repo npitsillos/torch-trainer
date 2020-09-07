@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "model_trainer"
-version = "0.1.1"
+version = "0.2.1"
 description = "A wrapper over PyTorch training loop"
 license = "GPL-3.0-or-later"
 authors = ["Nikolas Pitsillos <n.pitsillos.2@research.gla.ac.uk>"]
@@ -8,8 +8,8 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.8"
-torch = "^1.5.1"
-torchvision = "^0.6.1"
+torch = "^1.6.0"
+torchvision = "^0.7.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
