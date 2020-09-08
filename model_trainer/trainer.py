@@ -46,7 +46,9 @@ class Trainer():
         self.evaluator = Evaluator(self.loss_criterion)
         with torch.no_grad():
             for inputs, targets in self.logger.log(self.val_loader, self.print_freq, "Test:"):
-
+                inputs = torch.stack(list(i.to(self.device) for i in inputs))
+                targets = torch.stack(list(t.to(self.device) for t in targets))
+                
                 model_time = time.time()
                 outputs = self.model(inputs)
 
