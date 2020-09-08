@@ -26,10 +26,10 @@ class Trainer():
             self.model.train()
 
             for inputs, targets in self.logger.log(self.train_loader, self.print_freq, "Epoch: [{}]".format(self.epoch)):
-                
+                inputs = torch.stack(list(i.to(self.device) for i in inputs))
+                targets = torch.stack(list(t.to(self.device) for t in targets))
                 self.optimizer.zero_grad()
                 
-                targets = targets.to(self.device)
                 outputs = self.model(inputs)
                 loss = self.loss_criterion(outputs, targets)
                 loss.backward()
